@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Display.css';
+
 class Display extends Component {
     state = {
         date: new Date()
@@ -21,9 +23,9 @@ class Display extends Component {
 
     render() {
         return (
-            <div>
-                <h3>{this.state.date.toLocaleTimeString()}</h3>
-                {this.props.toggleDate ? <h5>{this.state.date.toDateString()}</h5> : null}
+            <div className="display">
+                <div className="display-time">{this.state.date.toLocaleTimeString()}</div>
+                {this.props.toggleDate ? <div className="display-date">{this.state.date.toDateString()}</div> : null}
             </div>
         );
     }
